@@ -3,7 +3,7 @@
   * Ajax Check Login
   * Will check if the User ID and Password are valid when logging in
   * Called from /js/validateLogin.js
-  */
+  **/
 if (!defined('EntryAllowed')) define('EntryAllowed', 'ok'); // make sure 'includes' can be accessed
 $bypassSecurity=true;        // no security check
 require('initialize.php');   // initialization and security
