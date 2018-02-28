@@ -1,1 +1,3 @@
-# PHP
+These PHP files are a random mix from some of my older projects, to demonstrate some of my coding techniques.  These files do not make up a complete application and sometimes not a complete executable script.  Some specific lines of code may have been removed as they contained non-public coding or data.  Obviously these scripts have been stripped of any private information.
+
+Some files such as the configuration and settings files are not included, as by the time I commented out all the confidential stuff, there wouldn't be much left. However I do feel these files will give someone who does a review enough of a feel for my coding skills and style.
