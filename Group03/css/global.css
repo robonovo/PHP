@@ -1,0 +1,39 @@
+body {
+  font-size:12px; font-family:arial,verdana,helvetica,sans-serif; color:#000000;
+  background-color:#ffffff; margin:0px; padding:0px;
+}
+
+.normaltext { font-family:arial,verdana,helvetica,sans-serif; font-size:12px; color:#000000; }
+.clearit { clear:both; }
+
+
+/* default link styling :: start */
+a:link, a:visited { font-size:12px; color:#000080; text-decoration:none; }
+a:hover { font-size:12px; color:#800000; text-decoration:underline; }
+
+a.underlined:link, a.underlined:visited { font-size:12px; color:#000080; text-decoration:underline; }
+a.underlined:hover { font-size:12px; color:#800000; text-decoration:underline; }
+/* defaul link styling :: end */
+
+
+/* message display styling :: start */
+.messagecontainer {
+  clear:both; floaf:left; width:690px; /* padding-top:20px; */
+  background-color:#ffffff; text-align: left;
+}
+
+.messagebox {
+  width:600px; text-align:left;
+  color:#000000; font-family:arial,verdana,helvetica,sans-serif; font-size:12px;
+}
+
+ul.messagebullet {
+  list-style-type:disc;
+  margin-left:16px; margin-top:1px; margin-bottom:1px;
+  padding-left:16px; padding-top:1px; padding-bottom:1px;
+  font-family:arial,verdana,helvetica,sans-serif; font-size:12px;
+}
+
+.errcolor { color:#ff0000; }
+.msgcolor { color:#0000ff; }
+/* message display styling :: end */

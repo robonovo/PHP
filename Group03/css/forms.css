@@ -1,0 +1,103 @@
+/* global form styling :: start */
+.formtext {
+  font-family: arial,verdana,helvetica,sans-serif; font-size: 12px; color: #000000;
+}
+
+.forminput {
+  font-family:arial,verdana,helvetica,sans-serif; font-size:12px;
+  font-style:normal; font-weight:normal; color:#000000; background-color:#fffffd;
+}
+
+.formreqd {
+  font-family:arial,verdana,helvetica,sans-serif; font-size:12px;
+  font-style:normal; font-weight:normal; color:#000000; background-color:#ffffd5;
+}
+
+.submitcontainer {
+  width:95%; padding:0px; margin:0px;
+  font-size:12px; font-family:arial,verdana,helvetica,sans-serif; text-align:left;
+}
+/* global form styling :: end */
+
+
+/* login form styling :: start */
+.loginlabel {
+  clear:both; float:left; width:35%; padding-top:4px; padding-right:6px;
+  font-family:arial,verdana,helvetica,sans-serif; font-size:12px; color:#000000; text-align:right;
+}
+
+.loginfield {
+  float:left; width:62%; padding-bottom:6px;
+  font-family:arial,verdana,helvetica,sans-serif; font-size:12px; color:#000000; text-align:left;
+}
+
+.formforgot {
+  font-family:arial,verdana,helvetica,sans-serif; font-size:11px; color:#000000;
+}
+
+a.forgotlink, a.forgotlink:visited {
+  font-family: arial,verdana,helvetica,sans-serif; font-size:11px; color:#000080;
+  text-decoration:none;
+}
+
+a.forgotlink:hover {
+  font-family:arial,verdana,helvetica,sans-serif; font-size:11px; color:#800000;
+  text-decoration:underline;
+}
+/* login form styling :: end */
+
+
+/* other form styling :: start */
+.formbox {
+/*  width: 650px; */
+  border:#d5e3f5 2px solid; background-color:#f5fcff; border-collapse:collapse;
+  font-size:12px; font-family:arial,verdana,helvetica,verdana;
+}
+
+.labelnormal {
+  clear:both; float:left; width:26%; padding-top:4px; padding-right:6px; text-align:right;
+  font-family:arial,verdana,helvetica,sans-serif; font-size:12px; color:#000000;
+}
+
+.fieldnormal {
+  float:left; width:70%; padding-bottom:6px; text-align:left;
+  font-family:arial,verdana,helvetica,sans-serif; font-size:12px; color:#000000;
+}
+
+.fieldspan {
+  clear:both; float:left; width:100%; padding:0px; margin:0px; text-align:center;
+  font-size:12px; font-family:arial,verdana,helvetica,sans-serif;
+}
+
+.formtitle {
+  width:100%; background-color:#d5e3f5; line-height:20px;
+  font-family:arial,verdana,helvetica,sans-serif; font-size:14px; color:#000000; font-weight:bold;
+}
+/* other form styling :: end */
+
+
+/* maintenance list styling :: start */
+.userlist { width:600px; }
+.repcodelist { width:700px; }
+
+.formboxall {
+  clear:both; padding:0px; margin:0px; border:#d5e3f5 1px solid; border-collapse:collapse;
+  font-size:12px; font-family:arial,verdana,helvetica,sans-serif;
+}
+
+.headerbg { float:left; width:100%; background-color:#d5e3f5; }
+
+.listheader {
+  float:left; padding-top:2px; padding-bottom:2px;
+  font-family:arial,verdana,helvetica,sans-serif; font-size:12px; color:#000000;
+}
+
+.listeven { float:left; width:100%; background-color:#f5fcff; }
+.listodd { float:left; width:100%; background-color: #ffffff; }
+
+.listtext {
+  float:left; padding-top:1px; padding-bottom:1px;
+  font-family:arial,verdana,helvetica,sans-serif; font-size:12px; color:#000000;
+}
+/* maintenance list styling :: end */
+
