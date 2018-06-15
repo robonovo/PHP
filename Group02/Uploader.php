@@ -1,8 +1,7 @@
-<?php if (!defined('EntryAllowed') || !EntryAllowed) die('Not A Valid Entry Point');
+<?php // if (!defined('validEntry') || !validEntry) die('Not A Valid Entry Point');
 
 /**
   * Upload Processor / Resizer class, Uploader.php
-  *
   * @author  Roger Bolser - <roger@eneti.com>
   *
   */
@@ -139,9 +138,13 @@ class Uploader {
     }
 
     $moveFile=false;
-
-    /*  some code removed here  */
- 
+    if ($resize) {
+      if ($isImage && $this->_imageWidth > $this->_resizeWidth) {
+        if (!$this->resize ($tempName, $fileName, $this->_resizeWidth)) {
+          $this->_uploadErrText=$this->_uploadErrors['9']."<br />".$this->_resizeErrText;
+          return $this->_uploadErrCode="9";
+        }
+      } else { $moveFile=true; }
     } else { $moveFile=true; } // just move the file - no resizing
 
     if ($moveFile) {
@@ -174,10 +177,19 @@ class Uploader {
 
     // now loop and process each one
     $haveError=false;
-    
-    /*  some code removed here  */
-  
-  
+    if (isset($upFiles) && count($upFiles)>0) {
+      foreach ($upFiles as $fval) {
+        $ret=$this->processUpload ($fval, '', false);
+        if ($ret=="0") {
+          $fileList[$fval]['file']=$this->_newFileName;
+          $fileList[$fval]['name']=$fval."_name";
+        } elseif ($ret!="4") { // file upload error
+          $haveError=true;
+          break;
+        }
+      } // end foreach
+    }
+
     if ($haveError) {
       if (isset($fileList)) {
         foreach ($fileList as $key => $val) { $deleteList[]=$val['file']; }
@@ -192,9 +204,18 @@ class Uploader {
 
   /** create thumb image */
   public function createThumb ($imageName) {
-    
-    /*  some code removed here  */
-
+    $newName=$this->generateThumbName ($imageName );
+    $this->_newFileName=$newName;
+    $serverName=$this->_uploadsPath.$imageName;
+    list($currWidth, $currHeight, $imgType, $attr) = getimagesize($serverName);
+    $this->_imageType=$imgType;
+    $this->_imageWidth=$currWidth;
+    $this->_imageHeight=$currHeight;
+    if (!$this->resize ($serverName, $newName, $this->_thumbWidth )) {
+      $this->_uploadErrText=$this->_uploadErrors['10']."<br />".$this->_resizeErrText;
+      $this->_uploadErrCode="10";
+      return false;
+    }
     return true;
   }
 
@@ -263,11 +284,23 @@ class Uploader {
           $this->_resizeErrText="Resize Error in Step 3";
           $resizeError=true;
         } else {
-          
-        /** code to add cropping to the image
+/** code to add cropping to the image
+ *   it's not final (just-uncomment-type) code,
+ *   just some things that need to be done
 
-        /*  cropping code removed here   */ 
+if ($cropImage) {
+  $croppedWidth="104";
+  $croppedHeight="104";
+  $cImage=imagecreatetruecolor($croppedWidth, $croppedHeight);
+  imagecopy($cImage,$tImage,0,0,0,0,$croppedWidth,$croppedHeight);
+}
 
+then the imageXXX code below needs to change for each image type ... ie.
+  if ($imgType=="1" && !imagegif($cImage,$newImage)) {
+  } elseif ($imgType=="2" && !imagejpeg($cImage,$newImage,$this->_jpgQuality)) {
+  } elseif ($imgType=="3" && !imagepng($cImage,$newImage)) {
+
+*/
           $newImage=$this->_uploadsPath.$newImage;
           if (file_exists($newImage)) { unlink($newImage); }
           if ($imgType=="1" && !imagegif($tImage,$newImage)) {
