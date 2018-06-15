@@ -28,7 +28,7 @@ if (isset($pVars['submitted'])) { // form has been submitted
   // set some initial vars
   $dateChars=array('-','.');    // used for converting mm/dd/yyyy to yyyy-mm-dd
   $haveSelected=false;          // have selected codes (repcodes / rep names / accounts)
-  $haveAdditional=false;        // have additional params	
+  $haveAdditional=false;        // have additional parameters	
   $ssSelectedCodes=array();     // array of selected repcodes
   $ssSelectedNames=array();     // array of selected rep names (for screen display in reports)
   $ssNameCodes=array();         // array of repcodes associated with the names
